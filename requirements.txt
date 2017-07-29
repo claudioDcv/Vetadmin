@@ -1,0 +1,13 @@
+Django==1.11.3
+django-extensions==1.8.1
+django-filter==1.0.4
+djangorestframework==3.6.3
+Markdown==2.6.8
+olefile==0.44
+Pillow==4.2.1
+pip==9.0.1
+psycopg2==2.7.3
+pytz==2017.2
+setuptools==36.2.4
+six==1.10.0
+wheel==0.29.0
