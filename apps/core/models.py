@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
 from django.core.validators import RegexValidator
-from django.db.models.signals import pre_delete
-from django.dispatch.dispatcher import receiver
 
 
 class Person(models.Model):
@@ -38,12 +36,3 @@ class Patient(models.Model):
     photo_first = models.ImageField(upload_to='patient/%Y/%m/%d/')
     photo_second = models.ImageField(upload_to='patient/%Y/%m/%d/')
     photo_third = models.ImageField(upload_to='patient/%Y/%m/%d/')
-
-
-# SIGNALS
-@receiver(pre_delete, sender=Patient)
-def patient_delete(sender, instance, **kwargs):
-    # Pass false so FileField doesn't save the model.
-    instance.photo_first.delete(False)
-    instance.photo_second.delete(False)
-    instance.photo_third.delete(False)
