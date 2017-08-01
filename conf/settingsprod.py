@@ -12,7 +12,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
 PROJECT_DIR = '/Users/claudiorojasrodriguez/src/personal/vetadmin'
+DB_NAME = 'vetadmin'
+DB_USER = 'postgres'
+DB_PASSWORD = '1234567890'
+DB_HOST = 'localhost'
+DB_PORT = ''
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,15 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
+
     'django_extensions',
     'rest_framework',
     'apps.core',
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,11 +89,11 @@ WSGI_APPLICATION = 'conf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'vetadmin',
-        'USER': 'postgres',
-        'PASSWORD': '1234567890',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': DB_NAME,
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
     }
 }
 
@@ -113,14 +118,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination', # noqa
-    'PAGE_SIZE': 10,
+    'PAGE_SIZE': 4,
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
-
-
-CORS_ORIGIN_ALLOW_ALL = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -140,11 +142,11 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '{}{}'.format(PROJECT_DIR, '/backend/media')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
+STATIC_ROOT = os.path.normpath('{}{}'.format(PROJECT_DIR, '/public'),)
+STATICFILES_DIRS = ('{}{}'.format(PROJECT_DIR, '/build'),)
