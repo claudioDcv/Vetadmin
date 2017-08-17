@@ -1,0 +1,22 @@
+[{
+  "model": "core.role",
+  "pk": 1,
+  "fields": {
+    "name": "Medico",
+    "natural_key": "medico"
+  }
+}, {
+  "model": "core.role",
+  "pk": 2,
+  "fields": {
+    "name": "Administrador",
+    "natural_key": "administrador"
+  }
+}, {
+  "model": "core.role",
+  "pk": 3,
+  "fields": {
+    "name": "Farmaceutico",
+    "natural_key": "farmaceutico"
+  }
+}]
