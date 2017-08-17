@@ -16,6 +16,6 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
-
+conf/staticfiles
 media
 static
