@@ -1,0 +1,30 @@
+[{
+  "model": "pharmacy.typesupplymovement",
+  "pk": 1,
+  "fields": {
+    "name": "Ingreso",
+    "natural_key": "ingreso"
+  }
+}, {
+  "model": "pharmacy.typesupplymovement",
+  "pk": 2,
+  "fields": {
+    "name": "Egreso",
+    "natural_key": "egreso"
+  }
+}, {
+  "model": "pharmacy.unitofmeasurement",
+  "pk": 1,
+  "fields": {
+    "name": "Unidad",
+    "natural_key": "unidad"
+  }
+}, {
+  "model": "pharmacy.unitofmeasurement",
+  "pk": 2,
+  "fields": {
+    "name": "Miligramos",
+    "natural_key": " miligramos"
+  }
+}
+]

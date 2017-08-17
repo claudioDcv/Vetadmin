@@ -7,3 +7,4 @@ phone_regex = RegexValidator(
 )
 
 STYLE_IMG_MIN = 'height: 50px;'
+STYLE_IMG_NONE = '/media/none.jpg'
